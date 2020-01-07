@@ -47,7 +47,7 @@ The Project was built using the Following Technologies
 Bootstrap 4  
 Font Awesome 5
 Python 3.5.3  
-Django 1.11  
+Django 2.2.9 
 Postgres DB  
 dj-database-url - Used to Connect to PostgreSQL Database    
 psycopg2 - PostgreSQL Adaptor for Python  
