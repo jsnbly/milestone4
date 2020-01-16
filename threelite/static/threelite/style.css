@@ -1,5 +1,6 @@
 .jumbotron {
     background: url("images/meetinglarge.jpg") no-repeat center;
+    padding-top: 60px;
 }
 .btn-primary {
     background-color: #c60063;
@@ -13,5 +14,6 @@
 }
 
 #contact {
-    background: url("contact.jpg") no-repeat center;
+    background: url("images/macgraphicdesk.jpg") no-repeat center;
+    color: #ffffff;
 }
