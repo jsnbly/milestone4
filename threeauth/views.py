@@ -38,5 +38,22 @@ def login (request):
 
 def registration(request):
     #user registration 
-    registration_form = UserRegistrationForm()
+    if request.user.is_authenticated:
+        return render(request, 'threelite/index.html')
+    if request.method == "POST":
+        registration_form = UserRegistrationForm(request.POST)
+
+        if registration_form.is_valid():
+            registration_form.save()
+
+            user = auth.authenticate(username=request.POST['username'],
+                                    password=request.POST['password1'])
+            if user:
+                auth.login(user=user, request=request)
+                messages.success(request,"You have successfully Registered")
+                return render(request,'threeauth/registration.html')
+            else:
+                messages.error(request, "Unable to register you account at this time")
+    else:
+        registration_form = UserRegistrationForm()
     return render(request, 'threeauth/registration.html', {"registration_form": registration_form}) 

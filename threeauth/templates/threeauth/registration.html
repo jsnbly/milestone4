@@ -8,7 +8,17 @@
 </head>
 <body>
     <h1>Registration Page</h1>
+
+    <p>Already have an account? you can sign in <a href="{% url 'login' %}">here</a></p>
     
+    {% if messages %}
+    <div>
+        {%for message in messages%}
+        {{message}}
+        {% endfor %}
+        </div>
+        {% endif %}
+
     <form method="POST">
         {% csrf_token %}
         {{ registration_form.as_p }}
