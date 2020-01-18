@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from threeauth.views import logout
+from threeauth.views import logout, login
 
 urlpatterns = [
     
@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('threelite.urls')),
     #User Auth URLS
     path('auth/', include('threeauth.urls')),
-    path('auth/logout/', logout, name="logout")
+    path('auth/logout/', logout, name="logout"),
+    path('auth/login/', login, name="login")
     
 ]
