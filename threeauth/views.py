@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
-from threeauth.forms import UserLoginForm
+from threeauth.forms import UserLoginForm, UserRegistrationForm
 # Create your views here.
 
 def index(request):
@@ -35,3 +35,8 @@ def login (request):
     else:
         login_form = UserLoginForm()
     return render(request, 'threeauth/login.html', {"login_form" : login_form})
+
+def registration(request):
+    #user registration 
+    registration_form = UserRegistrationForm()
+    return render(request, 'threeauth/registration.html', {"registration_form": registration_form}) 
