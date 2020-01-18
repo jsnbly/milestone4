@@ -24,6 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'f6kr-^t-^n)&j81^w-=o!m2r+x@1rv13xcynrh@i@e+0jabz7*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# To be Changed
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'threelite',
+    'threeauth',
 ]
 
 MIDDLEWARE = [
@@ -120,3 +122,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
