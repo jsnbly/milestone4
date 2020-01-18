@@ -1,20 +1,24 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
+from django.contrib.auth.decorators import login_required
 from threeauth.forms import UserLoginForm
 # Create your views here.
 
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'threeauth/index.html')
 
+@login_required(login_url='/auth/login')
 def logout(request):
     #logout the user
     auth.logout(request)
     messages.success(request,"You have successfully been Logged out")
-    return redirect(reverse('index'))
+    return render(request, 'threelite/index.html')
 
 def login (request):
     #login page
     #login_form = UserLoginForm()
+    if request.user.is_authenticated:
+        return render(request, 'threelite/index.html')
     if request.method=="POST":
         login_form = UserLoginForm(request.POST)
 
@@ -25,8 +29,9 @@ def login (request):
         if user:
             auth.login(user=user,request=request)
             messages.success(request,"You have successfully logged in...")
+            return render(request, 'threelite/index.html')
         else:
             login_form.add_error(None,"Your Username or Password was Incorrect")
     else:
         login_form = UserLoginForm()
-    return render(request, 'login.html', {"login_form" : login_form})
+    return render(request, 'threeauth/login.html', {"login_form" : login_form})

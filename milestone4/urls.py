@@ -21,10 +21,12 @@ urlpatterns = [
     
     path('admin/', admin.site.urls),
     #3lite URLSs
-    path('', include('threelite.urls')),
+    path('', include('threelite.urls'), name="home"),
     #User Auth URLS
     path('auth/', include('threeauth.urls')),
     path('auth/logout/', logout, name="logout"),
-    path('auth/login/', login, name="login")
+    path('auth/login/', login, name="login"),
+    #blogurls
+    path('blog/', include('threeblog.urls'))
     
 ]

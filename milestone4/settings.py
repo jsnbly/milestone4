@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'threelite',
     'threeauth',
+    'threeblog'
 ]
 
 MIDDLEWARE = [
