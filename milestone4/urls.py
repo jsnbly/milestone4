@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from threeauth.views import logout, login, registration
+from threeauth.views import logout, login, registration, user_profile
 
 urlpatterns = [
     
@@ -27,6 +27,7 @@ urlpatterns = [
     path('auth/logout/', logout, name="logout"),
     path('auth/login/', login, name="login"),
     path('auth/register', registration, name="registration"),
+    path('auth/profile', user_profile, name="profile"),
     #blogurls
     path('blog/', include('threeblog.urls'))
     
