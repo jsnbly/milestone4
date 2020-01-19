@@ -28,6 +28,8 @@ urlpatterns = [
     path('auth/login/', login, name="login"),
     path('auth/register', registration, name="registration"),
     path('auth/profile', user_profile, name="profile"),
+    #passwordreset needs to be completed
+    #path('auth/password-reset', include(url_reset)),
     #blogurls
     path('blog/', include('threeblog.urls'))
     
