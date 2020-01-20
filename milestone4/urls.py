@@ -21,7 +21,7 @@ urlpatterns = [
     
     path('admin/', admin.site.urls),
     #3lite URLSs
-    path('', include('threelite.urls'), name="home"),
+    path('', include('threelite.urls')),
     #User Auth URLS
     path('auth/', include('threeauth.urls')),
     path('auth/logout/', logout, name="logout"),
