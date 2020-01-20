@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import env
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -35,6 +36,7 @@ ALLOWED_HOSTS = [
 
 # Application definition
 
+#storages added for s3 bucket
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,7 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'threelite',
     'threeauth',
-    'threeblog'
+    'threeblog',
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -126,10 +129,27 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
-#removed for heroku
-#STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#amazon s3 storage 
+AWS_S3_OBJECT_PARAMETERS = {
+    'Expires':'Thu, 31 Dec 2099 20:00:00 GMT',
+    'CacheControl':'max-age=94608000'
+}
+
+AWS_STORAGE_BUCKET_NAME = 'threeshop'
+AWS_S3_REGION_NAME = 'eu-west-1'
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+
+#linked to customer_storages.py
+STATICFILES_LOCATION = 'static'
+
+STATIC_URL = 'https//%s/%s/'% (AWS_S3_CUSTOM_DOMAIN,STATICFILES_LOCATION)
+
+#removed below for heroku
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
