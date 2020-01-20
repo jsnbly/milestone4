@@ -28,7 +28,8 @@ SECRET_KEY = 'f6kr-^t-^n)&j81^w-=o!m2r+x@1rv13xcynrh@i@e+0jabz7*'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'milestone4jb.herokuapp.com'
+    'milestone4jb.herokuapp.com',
+    '127.0.0.1'
 ]
 
 
