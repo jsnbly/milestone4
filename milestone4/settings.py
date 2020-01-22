@@ -47,7 +47,9 @@ INSTALLED_APPS = [
     'threelite',
     'threeauth',
     'threeblog',
-    'storages'
+    'storages',
+    'django_forms_bootstrap',
+    'threeshop'
 ]
 
 MIDDLEWARE = [
