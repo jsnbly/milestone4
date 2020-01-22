@@ -18,6 +18,7 @@ from django.urls import path, include
 from threeauth.views import logout, login, registration, user_profile
 from threeshop import urls as url_products
 from threeshop.views import all_products
+from threecart import urls as urls_cart
 from django.views import static
 from .settings import MEDIA_ROOT
 
@@ -39,5 +40,6 @@ urlpatterns = [
     #shop urls
     path('shop/', all_products, name="shop"),
     path('products/', include(url_products)),
+    path('cart/', include(urls_cart)),
     path('media/(?P<path>.*)', static.serve, {'document_root':MEDIA_ROOT}),
 ]

@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'threeblog',
     'storages',
     'django_forms_bootstrap',
-    'threeshop'
+    'threeshop',
+    'threecart'
 ]
 
 MIDDLEWARE = [
@@ -76,6 +77,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                'threecart.contexts.cart_contents'
             ],
         },
     },
