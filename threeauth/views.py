@@ -37,7 +37,7 @@ def login (request):
         login_form = UserLoginForm()
     return render(request, 'threeauth/login.html', {"login_form" : login_form})
 
-def registration(request):
+def register(request):
     #user registration 
     if request.user.is_authenticated:
         return render(request, 'threelite/index.html')

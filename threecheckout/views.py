@@ -1,14 +1,14 @@
 from django.shortcuts import render, get_object_or_404, reverse,redirect
-import django.contrib.auth.decorators import login_required
-import .forms import MakePaymentForm, OrderForm
-import django.contrib import messages
-import django.conf import settings
-import .models import OrderLineItem
-import threeshop.models import Product
+from django.contrib.auth.decorators import login_required
+from .forms import MakePaymentForm, OrderForm
+from django.contrib import messages
+from django.conf import settings
+from .models import OrderLineItem
+from threeshop.models import Product
 import stripe
 # Create your views here.
 
-stripe.api_key = settins.STRIPE_SECRET
+stripe.api_key = settings.STRIPE_SECRET
 
 @login_required()
 def checkout(request):

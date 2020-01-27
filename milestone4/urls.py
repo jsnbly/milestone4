@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from threeauth.views import logout, login, registration, user_profile
+from threeauth.views import logout, login, register, user_profile
 from threeshop import urls as url_products
 from threeshop.views import all_products
 from threecart import urls as urls_cart
@@ -33,7 +33,7 @@ urlpatterns = [
     path('auth/', include('threeauth.urls')),
     path('auth/logout/', logout, name="logout"),
     path('auth/login/', login, name="login"),
-    path('auth/register', registration, name="registration"),
+    path('auth/register', register, name="registration"),
     path('auth/profile', user_profile, name="profile"),
     #passwordreset needs to be completed
     #path('auth/password-reset', include(url_reset)),
@@ -44,6 +44,6 @@ urlpatterns = [
     path('products/', include(url_products)),
     path('cart/', include(urls_cart)),
     path('search/', include(urls_search)),
-    path('checkout/' include(urls_checkout)),
+    path('checkout/', include(urls_checkout)),
     path('media/(?P<path>.*)', static.serve, {'document_root':MEDIA_ROOT}),
 ]
