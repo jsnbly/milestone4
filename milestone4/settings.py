@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'storages',
     'django_forms_bootstrap',
     'threeshop',
-    'threecart'
+    'threecart',
+    'threecheckout'
 ]
 
 MIDDLEWARE = [
