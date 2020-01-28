@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, HttpResponseRedirect
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.template.context_processors import csrf
 from threeauth.forms import UserLoginForm, UserRegistrationForm
 # Create your views here.
 
@@ -37,7 +38,7 @@ def login (request):
         login_form = UserLoginForm()
     return render(request, 'threeauth/login.html', {"login_form" : login_form})
 
-def register(request):
+def registration(request):
     #user registration 
     if request.user.is_authenticated:
         return render(request, 'threelite/index.html')

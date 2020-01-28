@@ -1,5 +1,6 @@
-{%extends 'base.html'%}
-{%load static%}
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap_tags %}
 
 {% block content %}
 
@@ -15,7 +16,7 @@
              <p>{{ item.product.price }}</p>
 
              <p>
-                 <form class="form-inline" method="POST" action="{% url'adjust_cart' item.id %}">
+                 <form class="form-inline" method="POST" action="{% url 'adjust_cart' item.id %}">
                      {%csrf_token%}
                      <div class="form-group">
                          <label for="exampleInputAmount" class="sr-only">New Qty</label>

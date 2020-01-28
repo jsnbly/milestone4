@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from threeauth.views import logout, login, register, user_profile
+from threeauth.views import logout, login, registration, user_profile
+from threeauth import urls as url_auth
 from threeshop import urls as url_products
 from threeshop.views import all_products
 from threecart import urls as urls_cart
@@ -30,11 +31,11 @@ urlpatterns = [
     #3lite URLSs
     path('', include('threelite.urls')),
     #User Auth URLS
-    path('auth/', include('threeauth.urls')),
-    path('auth/logout/', logout, name="logout"),
-    path('auth/login/', login, name="login"),
-    path('auth/register', register, name="registration"),
-    path('auth/profile', user_profile, name="profile"),
+    path('auth/', include(url_auth)),
+    #path('auth/logout/', logout, name="logout"),
+    #path('auth/login/', login, name="login"),
+    #path('auth/register', register, name="registration"),
+    #path('auth/profile', user_profile, name="profile"),
     #passwordreset needs to be completed
     #path('auth/password-reset', include(url_reset)),
     #blogurls
