@@ -32,9 +32,3 @@ def create_or_edit_post(request,pk=None):
     return render(request, 'blogpostform.html', {'form':form})
 
 
-
-
-# Create your views here.
-#old place holder below
-#def index(request):
-#    return render(request, 'threeblog/index.html')
