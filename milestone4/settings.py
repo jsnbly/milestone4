@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import dj_database_url
 #import env
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -46,7 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'threelite',
     'threeauth',
-    'threeblog',
+    'posts',
     'storages',
     'django_forms_bootstrap',
     'threeshop',

@@ -39,7 +39,7 @@ urlpatterns = [
     #passwordreset needs to be completed
     #path('auth/password-reset', include(url_reset)),
     #blogurls
-    path('blog/', include('threeblog.urls')),
+    path('blog/', include('posts.urls')),
     #shop urls
     path('shop/', all_products, name="shop"),
     path('products/', include(url_products)),
