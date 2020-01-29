@@ -22,7 +22,7 @@
   <!-- Custom styles for this template -->
   <link href="{% static 'threelite/landing-page.css' %}" rel="stylesheet">
   <!--Needs top be changed back to static on aws-->
-  <link href="threelite/static/threelite/css/style.css" rel="stylesheet">
+  <link href="{% static 'threelite/style.css' %}" rel="stylesheet">
 
   {% block head_js %}
   {% endblock head_js %}
@@ -92,9 +92,9 @@
             </div>
         </nav>
 
-        <!-- <div class="container"> -->
+        <div class="container dropundnav"> 
         {%block content%}{% endblock %}
-       <!-- </div> -->
+       </div>
         
   <!-- Footer -->
   <footer class="footer bg-light">
