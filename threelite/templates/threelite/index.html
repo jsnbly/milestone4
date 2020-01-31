@@ -7,12 +7,12 @@
   <header class="masthead text-white text-center">
     <div class="overlay"></div>
     <div class="container">
-      <div class="row text-center">
-        <div class="col-xl-9 mx-auto">
+      <div class="row">
+        <div class="col-xl-12 mx-auto">
           <h1 class="mb-5">3lite Graphic Designs </h1>
-          <h2 class="mb-5">Let us help you get your ideas to the world!</h2>
+          <h2 class="mb-5">Let us help get your ideas to the world!</h2>
                 <div class="text-center">
-                <button type="submit" class="btn btn-primary"><a href="{% url 'registration' %}">Sign up!</a></button>
+                <button type="submit" class="btn btn-success"><a href="{% url 'registration' %}">Sign up!</a></button>
               </div>
          
               </div>
@@ -38,7 +38,7 @@
                           with our custom designed Graphics fit for your needs, see what everyone else is saying...</p>
                      </div>
                      <div class="card-footer py-4">
-                        <a href="#" class="btn btn-secondary">See portfolio &raquo;</a>
+                        <a href="{% url 'portfolio' %}" class="btn btn-outline-secondary">See portfolio &raquo;</a>
                      </div>
                   </div>
                </div>
@@ -51,7 +51,7 @@
                            <p class="card-text">Join our website and get access to our online store that will help you with your design</p>
                      </div>
                      <div class="card-footer py-4">
-                        <a href="#" class="btn btn-secondary">Join Now &raquo;</a>
+                        <a href="{% url 'registration' %}" class="btn btn-outline-secondary">Join Now &raquo;</a>
                      </div>
                   </div>
                </div>
@@ -64,7 +64,7 @@
                         <p class="card-text">Consult our experts, use our online store to help you get started with your next design project</p>
                      </div>
                      <div class="card-footer py-4">
-                        <a href="#" class="btn btn-secondary">Contact Us &raquo;</a>
+                        <a href="#" class="btn btn-outline-secondary">Contact Us &raquo;</a>
                      </div>
                   </div>
                </div>
@@ -75,7 +75,7 @@
   <!-- Image Showcases -->
   <section class="showcase">
     <h2 class="display-4 text-center mt-5 mb-3">Our Designs</h2>
-    <div class="container-fluid p-0">
+    <div class="container">
       <div class="row no-gutters">
 
         <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url({% static 'threelite/images/bg-showcase-2.jpg' %});"></div>
@@ -139,18 +139,13 @@
         <div class="col-xl-9 mx-auto">
           <h2 class="mb-4">Got an Idea? Contact us!</h2>
         </div>
-        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
-            <div class="form-row">
-              <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
+        
+          
+              <div class="col-12 col-md-12">
+                <button type="submit" class="btn btn-block btn-lg btn-outline-primary">Contact</button>
               </div>
-              <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn-primary">Contact</button>
-              </div>
-            </div>
-          </form>
-        </div>
+            
+        
       </div>
     </div>
   </section>

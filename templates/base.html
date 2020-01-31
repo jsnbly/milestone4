@@ -24,8 +24,12 @@
   <!--Needs top be changed back to static on aws-->
   <link href="{% static 'threelite/style.css' %}" rel="stylesheet">
 
+  <!--js CDNS-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  
+  <!--favicon-->
+  <link rel="shortcut icon" type="image/png" href="{% static 'threelite/favicon.ico' %}">
 
   {% block head_js %}
   {% endblock head_js %}
@@ -33,20 +37,10 @@
 </head>
 
 <body>
-
-  <!-- Navigation 
-  <nav class="navbar navbar-light bg-light static-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">3Lite Design</a>
-      <a class="btn btn-primary" href="#">Sign In</a>
-    </div>
-  </nav> -->
-	
-  <!--Added -->
   
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="#">3Lite Graphic Design</a>
+                <a class="navbar-brand" href="{% url 'index' %}">3Lite Graphic Design</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" 
                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -78,29 +72,25 @@
                         </li>
                         {%if user.is_authenticated %}
                         <li class="nav-item">
-                          <a class="nav-link" href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"></i>
+                          <a class="nav-link" href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"></i>Cart
                           {% if product_count > 0 %}
-                          <label class="badge badge_warning">{{product_count}}</label>
+                          <label class="badge badge-warning">{{product_count}}</label>
                           {%endif%}
                           </a>
                       </li>
                       {% endif %}
-                        <!--<li class="nav-item">
-                          <form action="{%url 'search' %}" method="get">
-                            <input type="text" name="q">
-                            <button type="submit">Search</button>
-                          </form>
-                        </li>-->
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <!--Below needs to be changed to a more elegant solution-->
+        
         <div id="wrap">&nbsp;<br><br><br></div>
         <div class="container"> 
+          
         {%block content%}{% endblock %}
-       </div>
+     
+      
         
   <!-- Footer -->
   <footer class="footer bg-light">
@@ -151,7 +141,7 @@
 
   <!-- Bootstrap core JavaScript -->
 
-
+</div>
 </body>
 
 </html>
