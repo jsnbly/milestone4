@@ -6,21 +6,14 @@
 <div class="container">
 
 {% for post in posts %}
-<div class="row">
-    <div class="col-md-2 col-sm-3 text-center">
-        <a class="story-img" href="#">
-            <img src="/media/img/profile.jpg" class="img-circle">
-        </a>
-        <p><span class="boldtext">Author:</span>Jay </p>
-    </div>
+
     <div class="col-md-10 col-sm-9">
-        <h3>{{ post.title }}</h3>
+        <h2>{{ post.title }}</h2>
+        <hr>
         <div class="row">
             <div class="col-xs-9">
                 <p>{{ post.content|truncatewords:30 }}</p>
-                <p><a href="{% url 'post_detail' post.id %}"  class="btn btn-default">Read more</a></p>
                 <p><span class="boldtext">Published on:</span> {{ post.published_date }} </p>
-                <p><span class="boldtext">Views:</span> {{post.views}}</p>
                 <p><span class="boldtext">Tag:</span> {{ post.tag }}</p>
             </div>
         </div>
@@ -32,34 +25,48 @@
 
 </div>
 <div>
-    <!-- Image Showcases -->
-  <section class="showcase">
-    <h2 class="display-4 text-center mt-5 mb-3">Portfolio</h2>
-    <div class="container-fluid p-0">
-      <div class="row no-gutters">
-
-        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url({% static 'threelite/images/bg-showcase-2.jpg' %});"></div>
-        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-          <h2>Web Design</h2>
-          <p class="lead mb-0">We specialize in Responsive Web Design, from your ideas we can help your business presence grow online. Anything from simple one page designs all the way to fully functional e-commerce websites. Sign up and get a quote now.</p>
-        </div>
-      </div>
-      <div class="row no-gutters">
-        <div class="col-lg-6 text-white showcase-img" style="background-image: url({% static 'threelite/images/bg-showcase-1.jpg' %});"></div>
-        <div class="col-lg-6 my-auto showcase-text">
-          <h2>Business Needs</h2>
-          <p class="lead mb-0">We do a range of office print jobs, Such as custom Invoice printing, Letter Heads and other Office Stationary, This will really set you appart from the competition and give your company a professional look.</p>
-        </div>
-      </div>
-      <div class="row no-gutters">
-        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url({% static 'threelite/images/bg-showcase-3.jpg' %});"></div>
-        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-          <h2>Everything else!</h2>
-          <p class="lead mb-0">If you have a large event coming up and need advertising or even a small birthday party you want invite cards for we can help you get on the right track.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
+  <section id="services" class="container">
+    <h2 class="display-4 text-center mt-5 mb-3">Latest Projects</h2>
+    
+    <div class="row text-center">
+       <div class="col-md-4 mb-4">
+          <div class="card h-100">
+             <img class="card-img-top" src="{% static 'threelite/images/demosite.png' %}" alt="Design">
+             <div class="card-body">
+                <h4 class="card-title">Website</h4>
+                <p class="card-text">Our Client was looking for a fresh and modern online presence for their business we helped deliver this...</p>
+             </div>
+             <div class="card-footer py-4">
+                <a href="#" class="btn btn-outline-secondary">See More... &raquo;</a>
+             </div>
+          </div>
+       </div>
+       
+       <div class="col-md-4 mb-4">
+          <div class="card h-100">
+             <img class="card-img-top" src="{% static 'threelite/images/demoapp.png' %}" alt="Development">
+             <div class="card-body">
+                <h4 class="card-title">App</h4>
+                   <p class="card-text">This Client needed help with UX design for their online Club application so we stepped in...</p>
+             </div>
+             <div class="card-footer py-4">
+                <a href="#" class="btn btn-outline-secondary">See More... &raquo;</a>
+             </div>
+          </div>
+       </div>
+       
+       <div class="col-md-4 mb-4">
+          <div class="card h-100">
+             <img class="card-img-top" src="{% static 'threelite/images/demoflyer.jpg' %}" alt="Analytics">
+             <div class="card-body">
+                <h4 class="card-title">Flyers</h4>
+                <p class="card-text">Flyers were required and we took the challange, A clean flyer to help our client advertise their business</p>
+             </div>
+             <div class="card-footer py-4">
+                <a href="#" class="btn btn-outline-secondary">See More...&raquo;</a>
+             </div>
+          </div>
+       </div>
+    </div></section>
 
 {% endblock %}
