@@ -1,3 +1,7 @@
+a.button1:hover {
+color: "#007bff" !important;
+}
+
 .label-warning[href],
 .badge-warning[href] {
     background-color: #c67605;
