@@ -89,7 +89,16 @@
         
         <div id="wrap">&nbsp;<br><br><br></div>
         <div class="container"> 
-          
+
+       <!--Display Site Messages--> 
+         {% if messages %}
+         <div class="text-center">
+         {%for message in messages%}
+         {{message}}
+         {% endfor %}
+         </div>
+         {% endif %}
+
         {%block content%}{% endblock %}
      
       

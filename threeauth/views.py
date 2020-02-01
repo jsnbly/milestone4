@@ -13,7 +13,7 @@ def index(request):
 def logout(request):
     #logout the user
     auth.logout(request)
-    messages.success(request,"You have successfully been Logged out")
+    messages.success(request,"You have successfully Logged out...")
     return render(request, 'threelite/index.html')
 
 def login (request):
@@ -30,10 +30,10 @@ def login (request):
 
         if user:
             auth.login(user=user,request=request)
-            messages.success(request,"You have successfully logged in...")
+            messages.success(request,"You have successfully Logged in...")
             return render(request, 'threelite/index.html')
         else:
-            login_form.add_error(None,"Your Username or Password was Incorrect")
+            login_form.add_error(None,"Your Username or Password was Incorrect...")
     else:
         login_form = UserLoginForm()
     return render(request, 'threeauth/login.html', {"login_form" : login_form})
