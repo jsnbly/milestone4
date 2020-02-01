@@ -23,6 +23,7 @@ from threeshop.views import all_products
 from threecart import urls as urls_cart
 from threesearch import urls as urls_search
 from threecheckout import urls as urls_checkout
+from threecontact import urls as urls_contact
 from django.views import static
 from .settings import MEDIA_ROOT
 
@@ -47,5 +48,9 @@ urlpatterns = [
     path('cart/', include(urls_cart)),
     path('search/', include(urls_search)),
     path('checkout/', include(urls_checkout)),
-    url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT})
+    #media urls
+    url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),
+    #contact urls
+    path('contact/', include(urls_contact))
+
 ] 

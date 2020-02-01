@@ -70,7 +70,7 @@
                             <a class="nav-link" href="{% url 'portfolio' %}"><i class="far fa-image"></i> Portfolio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact"><i class="fas fa-at"></i> Contact</a>
+                            <a class="nav-link" href="{%url 'contact'%}"><i class="fas fa-at"></i> Contact</a>
                         </li>
                         {%if user.is_authenticated %}
                         <li class="nav-item">
@@ -105,7 +105,7 @@
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
-              <a href="#">Contact</a>
+              <a href="{%url 'contact'%}">Contact</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
