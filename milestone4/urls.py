@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import url
 from threeauth.views import logout, login, registration, user_profile
 from threeauth import urls as url_auth
 from threeshop import urls as url_products
@@ -46,5 +47,5 @@ urlpatterns = [
     path('cart/', include(urls_cart)),
     path('search/', include(urls_search)),
     path('checkout/', include(urls_checkout)),
-    path('media/(?P<path>.*)', static.serve, {'document_root':MEDIA_ROOT}),
-]
+    url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT})
+] 

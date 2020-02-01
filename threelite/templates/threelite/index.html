@@ -43,7 +43,7 @@
                           with our custom designed Graphics fit for your needs, see what everyone else is saying...</p>
                      </div>
                      <div class="card-footer py-4">
-                        <a href="{% url 'portfolio' %}" class="btn btn-outline-secondary">See portfolio &raquo;</a>
+                        <a href="{% url 'portfolio' %}" class="btn btn-outline-secondary">See Portfolio &raquo;</a>
                      </div>
                   </div>
                </div>
@@ -56,7 +56,20 @@
                            <p class="card-text">Join our website and get access to our online store that will help you with your design</p>
                      </div>
                      <div class="card-footer py-4">
+
+                      {%if user.is_authenticated %}
+                     
+                        
+                        <a href="{% url 'shop' %}" class="btn btn-outline-secondary">Shop Now... &raquo;</a>
+                      
+                      {%else%}  
+                      
                         <a href="{% url 'registration' %}" class="btn btn-outline-secondary">Join Now &raquo;</a>
+                      
+                      {% endif %}
+
+
+                       <!-- <a href="{% url 'registration' %}" class="btn btn-outline-secondary">Join Now &raquo;</a> -->
                      </div>
                   </div>
                </div>
