@@ -75,10 +75,21 @@ heroku deployment was usually a mirror of build success. AWS Console gave
 me access to my s3 bucket this allowed me to check all static files so images  
 and css are collected correctly when running collectstatic command.  
 
+Automated testing was used by adding to tests.py in individual applications  
+as an example of this threeshop tests.py shows how automated testing can be used  
+to add a Product to the shop. Along with Travis this kind of testing would allow  
+the project to grow larger and keep the main business logic working easily.  
+
+W3 Validators for HTML and CSS was used to try and keep the code clean and valid  
+
+Along with the above extensive manual testing for resposiveness using chrome  
+developer tools was done to make sure all users will have a similar experience  
+no matter what device they view the site on  .
+
 ## Deployment  
 To deploy this project I used Heroku for hosting the Application, Amazon  
 Web Services S3 Bucket was used to host the static files for the project  
-a PostgresDB hosted on Heroku was used to handle the Database requiremnts  
+a PostgresDB hosted on Heroku was used to handle the Database requirements  
 Below is a run down of the deployment stages.  
 
 ### Local Deployment:  
@@ -122,10 +133,10 @@ the settings.py application and changed from the orginal secret key used in deve
 
 ## Credits  
 Codeinstitute for the great content provided  
-Landing page was based of template from  https://startbootstrap.com/themes/  
+Landing page was based off a template from  https://startbootstrap.com/themes/  
 
 ### Content  
-All Content is copyright of its respected owner  
+All Content is copyright of its respected owner(s)    
 
 ### Media  
 All Media was sourced from google image and remains copyright of its orginal owner  
