@@ -172,13 +172,13 @@ STATIC_URL = 'https//%s/%s/'% (AWS_S3_CUSTOM_DOMAIN,STATICFILES_LOCATION)
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+#media settings
 MEDIA_URL = 'https//%s/%s/'% (AWS_S3_CUSTOM_DOMAIN,MEDIAFILES_LOCATION)
-#MEDIAFILES_DIRS = (os.path.join(BASE_DIR, 'media'),)
-
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 MEDIA_ROOT = 'https//%s/%s/'% (AWS_S3_CUSTOM_DOMAIN,MEDIAFILES_LOCATION)
 MEDIAFILES_STORAGE = 'custom_storages.MediaStorage'
 
+#stripe keys
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
