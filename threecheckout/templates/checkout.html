@@ -13,7 +13,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="row row-flex">
+<!--<div class="row row-flex">
     {% for item in cart_items %}
         <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
             <div class="panel-body">
@@ -28,14 +28,15 @@
             </div>
         </div>
     {% endfor %}
-</div>
+</div>-->
+<h3>Payment Details</h3>
 <div class="row">
-    <p>Total</p>
+    <h5>Total:</h5>
     <p><span class="glyphicon glyphicon-euro" aria-hidden="true"></span>{{ total }}</p>
 </div>
 
 <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
-    <legend>Payment Details</legend>
+    
 
     <div id="credit-card-errors" style="display: none;">
         <div id="alert-message block-message error" id="stripe-error-message"></div>
