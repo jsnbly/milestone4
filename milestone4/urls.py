@@ -34,12 +34,6 @@ urlpatterns = [
     path('', include('threelite.urls')),
     #User Auth URLS
     path('auth/', include(url_auth)),
-    #path('auth/logout/', logout, name="logout"),
-    #path('auth/login/', login, name="login"),
-    #path('auth/register', register, name="registration"),
-    #path('auth/profile', user_profile, name="profile"),
-    #passwordreset needs to be completed
-    #path('auth/password-reset', include(url_reset)),
     #blogurls
     path('blog/', include('posts.urls')),
     #shop urls
