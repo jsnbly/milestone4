@@ -23,11 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # To be Changed
-SECRET_KEY = 'f6kr-^t-^n)&j81^w-=o!m2r+x@1rv13xcynrh@i@e+0jabz7*'
-
+#Old Secret Key this is now retired
+#SECRET_KEY = 'f6kr-^t-^n)&j81^w-=o!m2r+x@1rv13xcynrh@i@e+0jabz7*'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 # To be Changed
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'milestone4jb.herokuapp.com',
@@ -170,7 +171,7 @@ STATIC_URL = 'https//%s/%s/'% (AWS_S3_CUSTOM_DOMAIN,STATICFILES_LOCATION)
 
 #removed below for heroku
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 #media settings
 MEDIA_URL = 'https//%s/%s/'% (AWS_S3_CUSTOM_DOMAIN,MEDIAFILES_LOCATION)

@@ -3,6 +3,9 @@ Milestone 4 Project for Code Institute
 This project is designed to showcase a Fullstack Website for a Graphic Design Company  
 It allows them to Showcase their Portfolio and sell there products directly to customers.  
 
+## Heroku Link  
+Click here to Launch the Website! https://milestone4jb.herokuapp.com/  
+
 ## Travis Build Status
 [![Build Status](https://travis-ci.com/jsnbly/milestone4.svg?branch=master)](https://travis-ci.com/jsnbly/milestone4)  
 
@@ -33,13 +36,14 @@ User Quote Form Wireframe - https://github.com/jsnbly/milestone4/tree/master/UX/
 ## Existing Features  
 - User Account Registration to allow users to save items for purchase and have a way to see their request updates  
 - Portfolio of previous work by the company  
-- Showcase showing images of previous work and reviews on a Carousel   
+- Site knows if user is logged in and updates buttons and nav depending    
 - Request form so the customer can request custom work  
 - Image Upload Fuction so the customer can send their ideas to the admin  
 - Pre Check out Calculator so the customer can be quoted prior to purchase    
-- Admin Panel so admin can see requests from Customer and revert  
-- Review Form after customer Purchases giving option to add their image to sites showcase  
+- Admin Panel so admin update elements of the site    
+- Blog style app built into portfolio so admin can update the portfolio page dynamically   
 - Navbar/Footer/Social Media Links  
+- Ecommerce fuctions with Stripe payment API Built in  
 
 
 ## Technologies Used  
