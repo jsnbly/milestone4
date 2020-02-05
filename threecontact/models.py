@@ -9,7 +9,7 @@ class Contact(models.Model):
     product = models.CharField(max_length=200)
     content = models.TextField()
     contact_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
-    image = models.ImageField(upload_to="img", blank=True, null=True)
+    image = models.ImageField(upload_to="images", blank=True, null=True)
 
     def __unicode__(self):
         return self.title
