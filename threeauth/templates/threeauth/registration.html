@@ -14,12 +14,14 @@
         {% endfor %}
         </div>
         {% endif %}
-    <div class = "form-group col-md-3">
+    <div class="row justify-content-center">
+    <div class = "form-group col-md-3 align-center logreg-box">
     <form method="POST">
         {% csrf_token %}
         {{ registration_form|as_bootstrap }}
         <button type="submit" class="btn btn-success">Register</button>
     </form>
     </div>
+</div>
 
     {%endblock%}

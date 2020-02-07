@@ -40,3 +40,9 @@ caption p {
 .product-description {
     min-height: 40px;
 }
+
+.logreg-box{
+    height: 100%;
+    border: 1px solid #ddd;
+    padding: 15px
+}
