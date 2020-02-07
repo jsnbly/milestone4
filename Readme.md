@@ -40,7 +40,7 @@ User Quote Form Wireframe - https://github.com/jsnbly/milestone4/tree/master/UX/
 - Request form so the customer can request custom work  
 - Image Upload Fuction so the customer can send their ideas to the admin  
 - Pre Check out Calculator so the customer can be quoted prior to purchase    
-- Admin Panel so admin update elements of the site    
+- Admin Panel so admin update elements of the site such as contacts to the site    
 - Blog style app built into portfolio so admin can update the portfolio page dynamically   
 - Navbar/Footer/Social Media Links  
 - Ecommerce fuctions with Stripe payment API Built in  
@@ -83,6 +83,10 @@ Automated testing was used by adding to tests.py in individual applications
 as an example of this threeshop tests.py shows how automated testing can be used  
 to add a Product to the shop. Along with Travis this kind of testing would allow  
 the project to grow larger and keep the main business logic working easily.  
+
+I also used Unit testing in threelite tests.py with help from tutorials on  
+https://wsvincent.com/django-testing-tutorial/ this allowed me to test routes  
+as unit tests and make sure I was getting correct responses back.  
 
 W3 Validators for HTML and CSS was used to try and keep the code clean and valid  
 
