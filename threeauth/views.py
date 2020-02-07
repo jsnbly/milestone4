@@ -53,7 +53,7 @@ def registration(request):
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request,"You have successfully Registered")
-                return render(request,'threeauth/login.html')
+                return render(request,'threelite/index.html')
             else:
                 messages.error(request, "Unable to register you account at this time")
     else:
