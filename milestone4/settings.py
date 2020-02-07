@@ -171,7 +171,7 @@ STATIC_URL = 'https//%s/%s/'% (AWS_S3_CUSTOM_DOMAIN,STATICFILES_LOCATION)
 
 #removed below for heroku
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 #media settings
 MEDIA_URL = 'https//%s/%s/'% (AWS_S3_CUSTOM_DOMAIN,MEDIAFILES_LOCATION)
